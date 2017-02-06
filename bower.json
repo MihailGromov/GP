@@ -1,0 +1,30 @@
+{
+  "name": "mean",
+  "description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js",
+  "homepage": "http://meanjs.org/",
+  "license": "MIT",
+  "engines": {
+    "node": "4.1.1"
+  },
+  "dependencies": {
+    "bootstrap": "~3",
+    "angular": "~1.5",
+    "angular-resource": "~1.5",
+    "angular-animate": "~1.5",
+    "angular-mocks": "~1.5",
+    "angular-bootstrap": "~0.13",
+    "angular-ui-utils": "bower",
+    "angular-ui-router": "~0.2",
+    "angular-file-upload": "1.1.5",
+    "angular-messages": "~1.3.17",
+    "owasp-password-strength-test": "~1.3.0",
+    "angular-material": "^1.1.1",
+    "angular-chart.js": "^1.0.3",
+    "angular-material-data-table": "^0.10.9",
+    "angular-drag-and-drop-lists": "^1.4.0"
+  },
+  "resolutions": {
+    "angular": "~1.5",
+    "angular-messages": "^1.4.8"
+  }
+}

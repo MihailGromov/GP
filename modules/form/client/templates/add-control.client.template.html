@@ -1,0 +1,22 @@
+<div class="darker">
+    <md-list
+        dnd-list="__.controls"
+        dnd-allowed-types="__.allowed">
+        <md-list-item
+            ng-repeat="control in __.controls track by control.type"
+            dnd-draggable="control"
+            dnd-type="empty"
+            dnd-effect-allowed="moveCopy"
+            dnd-selected="__.selected = control">
+
+            <dnd-nodrag flex>
+                <div layout>
+                    <div flex dnd-handle class="handle">
+                        <i class="material-icons">&#xE25D;</i>
+                    </div>
+                    <div flex class="text-right" ng-bind="control.text"></div>
+                </div>
+            </dnd-nodrag>
+        </md-list-item>
+    </md-list>
+</div>

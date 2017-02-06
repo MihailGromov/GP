@@ -1,0 +1,15 @@
+.darker--span {
+    height: 100%;
+}
+
+.right {
+    float: right;
+}
+
+md-input-container.no-margin {
+    margin-bottom: 0;
+}
+
+md-table-pagination .label {
+    color: gray;
+}

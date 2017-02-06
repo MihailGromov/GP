@@ -1,0 +1,68 @@
+<div ng-controller="HeaderController as vm">
+  <md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" ng-click="vm.toggleLeft()" aria-label="Settings">
+        <i class="material-icons">menu</i>
+      </md-button>
+
+      <span flex></span>
+
+      <md-menu md-offset="0 -7" ng-hide="vm.authentication.user">
+        <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+          <i class="material-icons">more_vert</i>
+        </md-button>
+        <md-menu-content width="6">
+          <md-menu-item>
+            <md-button ui-sref="authentication.signup">Sign Up</md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ui-sref="authentication.signin">Sign In</md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+
+      <md-menu md-offset="0 -7" ng-show="vm.authentication.user">
+        <md-button aria-label="Open demo menu" ng-click="$mdOpenMenu($event)">
+          <img ng-src="/{{vm.authentication.user.profileImageURL}}" alt="{{vm.authentication.user.displayName}}" class="header-profile-image">
+          <span ng-bind="vm.authentication.user.displayName"></span>
+        </md-button>
+
+        <md-menu-content width="6">
+          <md-menu-item ng-repeat="item in vm.accountMenu.items">
+            <md-button ui-sref="{{item.state}}" ng-bind="item.title" aria-label="{{item.state}}"></md-button>
+          </md-menu-item>
+          <md-divider ng-if="!$last"></md-divider>
+          <md-menu-item>
+            <md-button href="/api/auth/signout" target="_self">Sign Out</md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
+  </md-toolbar>
+
+  <md-sidenav class="md-sidenav-left navbar-fixed-top" md-component-id="left" md-disable-backdrop md-whiteframe="4">
+
+    <md-toolbar class="md-theme-indigo">
+      <h1 class="md-toolbar-tools">Logo</h1>
+    </md-toolbar>
+
+    <md-list>
+        <md-list-item
+          class="md-subhead"
+          ng-click="null"
+          ng-repeat="item in vm.menu.items | orderBy: 'position'"
+          ng-show="item.shouldRender(vm.authentication.user);"
+          aria-label="{{item.state}}"
+          ui-sref="{{item.state}}">
+          <span data-ng-bind="::item.title"></span>
+        </md-list-item>
+
+        <md-divider></md-divider>
+
+        <md-list-item data-ng-click="vm.toggleLeft()" class="md-subhead">
+          <span>Close</span>
+        </md-list-item>
+    </md-list>
+
+  </md-sidenav>
+</div>

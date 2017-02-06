@@ -1,0 +1,150 @@
+<section ng-controller="HomeController as vm">
+	<div class="jumbotron">
+		<h1>Welcome</h1>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row content padding">
+			<div class="col-md-4" ng-repeat="service in ::vm.services">
+				<div class="service md-padding md-margin">
+					<h3 class="service__heading" data-ng-bind="::service.heading"></h3>
+
+					<div layout layout-align="center center">
+						<div flex="40">
+							<i class="material-icons service__icon" data-ng-bind="::service.icon"></i>
+						</div>
+
+						<div flex="60">
+							<p class="service__paragraph" data-ng-bind="::service.text"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row content padding" ng-repeat="n in [1, 2, 3]" ng-class="{darker: $even}">
+			<h2 class="margin-bottom">Heading</h2>
+
+			<div class="row">
+				<div class="col-md-6" ng-show="$odd">
+					<img src="https://material-design.storage.googleapis.com/publish/material_v_4/social.png" alt="Some Image" class="img-responsive img-thumbnail">
+				</div>
+
+				<div class="col-md-6">
+					<p class="md-padding text-center lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias assumenda quis a consectetur rem, quibusdam libero
+						cumque vitae quam placeat ut voluptates modi neque fuga tempore nihil veritatis quisquam repudiandae!</p>
+				</div>
+
+				<div class="col-md-6" ng-hide="$odd">
+					<img src="https://material-design.storage.googleapis.com/publish/material_v_4/social.png" alt="Some Image" class="img-responsive img-thumbnail">
+				</div>
+			</div>
+		</div>
+
+		<div class="row content padding">
+			<h2 class="margin-bottom">Heading</h2>
+
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-xs-12" ng-repeat="n in [1, 2, 3, 4]">
+					<md-card>
+						<img ng-src="https://material-design.storage.googleapis.com/publish/material_v_4/social.png" class="md-card-image" alt="Washed Out">
+						<md-card-title>
+							<md-card-title-text>
+								<span class="md-headline">Developer</span>
+							</md-card-title-text>
+						</md-card-title>
+						<md-card-content>
+							<p>
+								The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest
+								Greene's musical language: feel it. It's a simple request, as well...
+							</p>
+						</md-card-content>
+					</md-card>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--div class="jumbotron text-center">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+        <img alt="MEAN.JS" class="img-responsive text-center" src="modules/core/client/img/brand/logo.png" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <p class="lead">
+        Open-Source Full-Stack Solution For MEAN Applications
+      </p>
+    </div>
+    <div class="row">
+      <p>
+        <a class="btn btn-primary btn-lg" href="http://meanjs.org" target="_blank">Learn more</a>
+      </p>
+    </div>
+  </div>
+  <div>
+    <h2>Congrats! You've configured and run the sample application.</h2>
+    <p>MEAN.JS is a web application boilerplate, which means you should start changing everything :-)</p>
+    <p>This sample application tracks users and articles.</p>
+    <ul>
+      <li>
+        Click
+        <em>Sign Up</em> to get started.
+      </li>
+      <li>
+        Configure your app to work with your social accounts, by editing the
+        <em>/config/env/*.js</em> files.
+      </li>
+      <li>
+        Edit your users module.
+      </li>
+      <li>
+        Add new CRUD modules.
+      </li>
+      <li>
+        Have fun...
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <h2><strong>M</strong>ongoDB</h2>
+      <p><a target="_blank" href="http://mongodb.org/">MongoDB</a> is a NoSQL database. MongoDB's <a target="_blank" href="http://docs.mongodb.org/manual/">great manual</a> is the place to get started with NoSQL and MongoDB.</p>
+    </div>
+    <div class="col-md-3">
+      <h2><strong>E</strong>xpress</h2>
+      <p><a target="_blank" href="http://expressjs.com/"> Express</a> is a NodeJS server-side application web framework. Check out <a target="_blank" href="http://expressjs.com/4x/api.html">The ExpressJS API reference for more information</a> or <a target="_blank" href="http://stackoverflow.com/questions/8144214/learning-express-for-node-js">StackOverflow</a> for more info.</p>
+    </div>
+    <div class="col-md-3">
+      <h2><strong>A</strong>ngularJS</h2>
+      <p><a target="_blank" href="http://angularjs.org/">AngularJS</a> is client-side web application framework. The <a target="_blank" href="http://www.thinkster.io/">Thinkster Popular Guide</a> and <a target="_blank" href="https://egghead.io/">Egghead Videos</a> are great resources.</p>
+    </div>
+    <div class="col-md-3">
+      <h2><strong>N</strong>ode.js</h2>
+      <p><a target="_blank" href="http://nodejs.org/">Node.js</a> is a JavaScript run-time, popular for being a web server platform. Node's website and this <a target="_blank" href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">stackOverflow thread</a> offer excellent starting points to get to grasps with node.</p>
+    </div>
+  </div>
+  <div class="well">
+    <h2>MEAN.JS Documentation</h2>
+    <p>
+      Once you're familiar with the foundation technology, check out the MEAN.JS Documentation:
+      <ul>
+        <li><a target="_blank" href="http://meanjs.org/docs.html">MEAN.JS Documentation</a>
+        </li>
+        <!-- <li><a target="_blank" href="http://meanjs.org/generator.html">Yeoman Generator</a>
+				</li> ->
+        <li><a target="_blank" href="http://meanjs.org/modules.html">Modules</a>
+        </li>
+        <li><a target="_blank" href="http://meanjs.org/changelog.html">Changelog</a>
+        </li>
+        <li><a target="_blank" href="http://meanjs.org/community.html">Community</a>
+        </li>
+        <li><a target="_blank" href="http://blog.meanjs.org">Blog</a>
+        </li>
+      </ul>
+    </p>
+  </div>
+  <br>Enjoy &amp; Keep Us Updated,
+  <br>The MEAN.JS Team.-->
+</section>
