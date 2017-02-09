@@ -2,22 +2,55 @@
 	<div layout flex>
 		<div class="md-margin" style="width: 300px;background-color: rgba(0, 0, 0, .1);">
 			<md-list>
-				<md-list-item ng-repeat="n in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" ng-click="null">
-					<span>Some Text</span>
+				<md-list-item ng-click="scrollTo(program)">
+					<span>Program</span>
+				</md-list-item>
+				<md-list-item ng-click="scrollTo(features)">
+					<span>Features</span>
+				</md-list-item>
+				<md-list-item ng-click="scrollTo(vision)">
+					<span>Vision</span>
+				</md-list-item>
+				<md-list-item ng-click="scrollTo(description)">
+					<span>Program's Description</span>
+				</md-list-item>
+				<md-list-item ng-click="scrollTo(stakeholders)">
+					<span>Stakeholders</span>
+				</md-list-item>
+				<md-list-item ng-click="scrollTo(instruction)">
+					<span>Instruction</span>
+				</md-list-item>
+				<md-list-item ng-click="scrollTo(register)">
+					<span>Register or Login</span>
+				</md-list-item>
+				<md-list-item ng-click="scrollTo(createStr)">
+					<span>Create Storage</span>
+				</md-list-item>
+				<md-list-item ng-click="scrollTo(openStr)">
+					<span>Open Storage</span>
+				</md-list-item>
+				<md-list-item ng-click="scrollTo(createCat)">
+					<span>Create Category</span>
+				</md-list-item>
+				<md-list-item ng-click="scrollTo(createForm)">
+					<span>Create Form</span>
+				</md-list-item>
+				<md-list-item ng-click="scrollTo(more)">
+					<span>Add More Options</span>
 				</md-list-item>
 			</md-list>
 		</div>
 		<md-content class="md-padding" style="border-left: 1px solid #098" flex="70">
 			<div>
-				<h1 class="margin-bottom">Program</h1>
-				<h3>Features</h3>
+				<h1 id="program" class="margin-bottom">Program</h1>
+				<h3 id="features">Features</h3>
 				<ul>
 					<li>Build form templates.</li>
 					<li>Structure data with a 3 branch pattern.</li>
 					<li>Outsourced API of the data.</li>
 					<li>Maintain and change the data.</li>
 				</ul>
-				<h3>Vision</h3>
+				<h3 id="vision">Vision</h3>
 				<p>Giving people simplistic way to store data and out source it for their own use in JSON. - Easy storage structure not
 					for complex data. - It will allow easey management with easy navigation through personal raw alphanumerical data.</p>
 				<h3>Program's Description</h3>
@@ -62,7 +95,7 @@
 				</ul>
 			</div>
 			<div>
-				<h1 class="margin-bottom">Stakeholders</h1>
+				<h1 id="stakeholders" class="margin-bottom">Stakeholders</h1>
 				<blockquote>
 					<p>Low Interest - Low Power F</p>
 					<p>Low Interest - High Power D</p>
@@ -108,6 +141,33 @@
 					</tbody>
 				</table>
 			</div>
-		</md-content>
+			<div>
+				<h1 id="instruction" class="margin-bottom">Instruction</h1>
+				<h3 id="register">Register or Login</h3>
+				<p>To register your account please click on icon in right top corner on Homepage, and follow instructions.</p>
+				<img src="http://localhost:3000/images/LoginRegister.png" alt="LoginRegister" class="img-responsive">
+				<h3 id="createStr">Create Storage</h3>
+				<p>To create storage, user must be registered and logged in. Open menu in left top corner and go to Storages section. In
+					this page click on "Add Storage" as on image below.</p>
+				<img src="http://localhost:3000/images/AddStorage.png" alt="AddStorage" class="img-responsive">
+				<p>Give a name to your storage</p>
+				<img src="http://localhost:3000/images/NameStorage.png" alt="NameStorage" class="img-responsive">
+				<h3 id="openStr">Open storage</h3>
+				<p>To open Storage click on dots as on image below.</p>
+				<img src="http://localhost:3000/images/OpenStorage.png" alt="OpenStorage" class="img-responsive">
+				<h3 id="createCat">Create Category</h3>
+				<p>Completely identical to Storages.</p>
+				<h3 id="createCat">Create Form</h3>
+				<p>To create Form open category and select "Edit Form" on the top, in edditing mode you can simply drag and drop necessary
+					elements as shown on images below.</p>
+				<img src="http://localhost:3000/images/SelectOption.png" alt="SelectOption" class="img-responsive">
+				<img src="http://localhost:3000/images/EditForm.png" alt="EditForm" class="img-responsive">
+				<p style="color: #FF0000; background-color: #FFFF00">Don't forget to Save your created form!</p>
+				<h3 id="more">Add More Options</h3>
+				<p>You can add more records in your form, for example in Dropdown list, simply type all what you need and press enter.</p>
+				<img src="http://localhost:3000/images/CreateRecords.png" alt="CreateRecords" class="img-responsive">
+			</div>
+	</div>
+	</md-content>
 	</div>
 </section>
